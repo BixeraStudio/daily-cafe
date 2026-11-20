@@ -1,0 +1,1005 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>The Daily | Cafe & Bistro in Desapriya Park, Kolkata</title>
+  <meta name="description" content="Welcome to The Daily Kolkata. Aesthetic cafe & bistro in Desapriya Park offering global cuisine, specialty curated coffee, blueberry pancakes, truffle pasta, tenderloin steaks, and artisanal desserts. Order on Zomato, Swiggy, or directly with add-to-cart.">
+  
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  
+  <!-- Phosphor Icons -->
+  <link rel="stylesheet" href="https://unpkg.com/@phosphor-icons/web@2.1.1/src/regular/style.css">
+  <link rel="stylesheet" href="https://unpkg.com/@phosphor-icons/web@2.1.1/src/fill/style.css">
+  
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <!-- Top Announcement Bar -->
+  <div class="announcement-bar">
+    <div class="container announcement-content">
+      <div class="announcement-left">
+        <span class="live-dot pulse"></span>
+        <span id="liveStatusText">Open Now • Closes 10:30 PM</span>
+        <span class="sep">•</span>
+        <span class="tag-pill">Now On Zomato, Swiggy & Direct Delivery</span>
+        <span>5 Satyen Dutta Rd, Desapriya Park • Call: <a href="tel:+918017099950" style="color: inherit; text-decoration: underline;">+91 80170 99950</a></span>
+      </div>
+      <div class="announcement-right">
+        <span class="promo-code">Use code <strong id="copyCoupon" style="cursor: pointer;" title="Click to copy code">DAILY10</strong> for 10% off</span>
+        <div class="social-mini">
+          <a href="tel:+918017099950" title="Call The Daily"><i class="ph ph-phone"></i></a>
+          <a href="https://wa.me/918017099950" target="_blank" rel="noopener" title="Order via WhatsApp"><i class="ph ph-whatsapp-logo"></i></a>
+          <a href="https://www.google.com/maps/place/the+daily+kolkata/data=!4m2!3m1!1s0x3a0271fad96c306d:0x698a6b3fdb6e4c73?sa=X&ved=1t:242&ictx=111" target="_blank" rel="noopener" title="Get Directions"><i class="ph ph-map-pin"></i></a>
+          <a href="https://www.instagram.com/thedailykolkata/?hl=en" target="_blank" rel="noopener" title="Instagram @thedailykolkata"><i class="ph ph-instagram-logo"></i></a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Header / Navigation -->
+  <header class="site-header" id="header">
+    <div class="container header-container">
+      <a href="index.html" class="brand-logo" aria-label="The Daily Home">
+        <div class="logo-mark">
+          <i class="ph ph-coffee"></i>
+          <span class="steam-ring"></span>
+        </div>
+        <div class="logo-text">
+          <span class="brand-name">THE DAILY</span>
+          <span class="brand-sub">CAFE & BISTRO • KOLKATA</span>
+        </div>
+      </a>
+
+      <!-- Desktop Navigation Links -->
+      <nav class="nav-menu" id="navMenu">
+        <ul class="nav-list">
+          <li><a href="index.html" class="nav-link active">Home</a></li>
+          <li><a href="menu.html" class="nav-link">Menu & Order</a></li>
+          <li><a href="about.html" class="nav-link">Our Story</a></li>
+          <li><a href="reservations.html" class="nav-link">Reservations</a></li>
+          <li><a href="contact.html" class="nav-link">Contact & Map</a></li>
+        </ul>
+      </nav>
+
+      <!-- Action Utilities -->
+      <div class="header-actions">
+        <!-- Ambient Sound Player Toggle -->
+        <button class="icon-btn" id="soundToggle" title="Toggle cozy cafe ambient sound" aria-label="Toggle cafe ambiance audio">
+          <i class="ph ph-speaker-slash" id="soundIcon"></i>
+          <span class="audio-label">Ambiance</span>
+        </button>
+
+        <!-- Theme Toggle -->
+        <button class="icon-btn" id="themeToggle" title="Switch Theme (Dark Roast / Warm Cream)" aria-label="Toggle Dark or Light theme">
+          <i class="ph ph-sun" id="themeIcon"></i>
+        </button>
+
+        <!-- Cart Trigger Button -->
+        <button class="cart-trigger" id="cartTrigger" aria-label="View Shopping Cart">
+          <i class="ph ph-shopping-bag"></i>
+          <span class="cart-label">Cart</span>
+          <span class="cart-count" id="cartCount">0</span>
+        </button>
+
+        <!-- Order Online Modal Hub CTA -->
+        <button class="btn btn-primary btn-sm header-cta open-order-modal-btn">
+          <i class="ph ph-bag"></i> Order Online
+        </button>
+
+        <!-- Mobile Menu Toggle Button -->
+        <button class="mobile-toggle" id="mobileMenuToggle" aria-label="Toggle navigation menu">
+          <span class="bar"></span>
+          <span class="bar"></span>
+          <span class="bar"></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Mobile Drawer Menu Overlay -->
+  <div class="mobile-drawer" id="mobileDrawer">
+    <div class="drawer-backdrop" id="drawerBackdrop"></div>
+    <div class="drawer-panel">
+      <div class="drawer-header">
+        <div class="logo-text">
+          <span class="brand-name">THE DAILY</span>
+          <span class="brand-sub">KOLKATA • EST. 2019</span>
+        </div>
+        <button class="icon-btn" id="mobileCloseBtn" aria-label="Close menu">
+          <i class="ph ph-x"></i>
+        </button>
+      </div>
+      <div class="drawer-body">
+        <ul class="mobile-nav-list">
+          <li><a href="index.html" class="mobile-nav-link active"><i class="ph ph-house"></i> Home</a></li>
+          <li><a href="menu.html" class="mobile-nav-link"><i class="ph ph-fork-knife"></i> Full Menu & Cart</a></li>
+          <li><a href="about.html" class="mobile-nav-link"><i class="ph ph-heart"></i> Our Story & Chef</a></li>
+          <li><a href="reservations.html" class="mobile-nav-link"><i class="ph ph-calendar"></i> Book a Table</a></li>
+          <li><a href="contact.html" class="mobile-nav-link"><i class="ph ph-map-pin"></i> Location & Directions</a></li>
+        </ul>
+        <div class="drawer-actions">
+          <button class="btn btn-primary btn-block open-order-modal-btn">
+            <i class="ph ph-moped"></i> Order Food Online
+          </button>
+          <a href="tel:+918017099950" class="btn btn-secondary btn-block">
+            <i class="ph ph-phone"></i> Call +91 80170 99950
+          </a>
+          <a href="https://wa.me/918017099950" target="_blank" class="btn btn-whatsapp btn-block">
+            <i class="ph ph-whatsapp-logo"></i> WhatsApp Order
+          </a>
+        </div>
+        <div class="drawer-footer">
+          <p><i class="ph ph-map-pin"></i> 5, Satyen Dutta Road, Desapriya Park, Kolkata 700029</p>
+          <p><i class="ph ph-clock"></i> 12:00 PM – 10:30 PM (Sun 10:30 AM)</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Hero Section -->
+  <section class="hero-section" id="hero">
+    <div class="hero-bg-overlay"></div>
+    <div class="container hero-container">
+      <div class="hero-content">
+        <div class="hero-pill-badge">
+          <span class="rating-star">★ 4.3</span>
+          <span>1,673 Google Reviews</span>
+          <span class="sep">•</span>
+          <span>₹400–1,000 / Person</span>
+        </div>
+
+        <h1 class="hero-title">
+          Good Food All Day, <br>
+          <span class="text-gradient">Every Day.</span>
+        </h1>
+
+        <p class="hero-lead">
+          A sunlit European cafe & bistro tucked in the bylanes near Desapriya Park. Crafted by Chef Urvika Kanoi with fresh local produce, specially curated single-origin coffees, handmade pastas, and succulent steaks.
+        </p>
+
+        <!-- Fast Action Callouts -->
+        <div class="hero-actions-wrap">
+          <div class="hero-btn-row">
+            <a href="menu.html" class="btn btn-primary btn-lg">
+              <i class="ph ph-shopping-bag"></i> Order Direct (Add to Cart)
+            </a>
+            <button class="btn btn-secondary btn-lg open-order-modal-btn">
+              <i class="ph ph-moped"></i> Swiggy / Zomato Hub
+            </button>
+          </div>
+
+          <div class="hero-subactions">
+            <a href="tel:+918017099950" class="action-pill-link" title="Call +91 80170 99950">
+              <i class="ph ph-phone-call"></i> Call: 080170 99950
+            </a>
+            <a href="https://www.google.com/maps/place/the+daily+kolkata/data=!4m2!3m1!1s0x3a0271fad96c306d:0x698a6b3fdb6e4c73?sa=X&ved=1t:242&ictx=111" target="_blank" rel="noopener" class="action-pill-link">
+              <i class="ph ph-navigation-arrow"></i> Get Directions (Near Maharaja Tea)
+            </a>
+            <a href="reservations.html" class="action-pill-link">
+              <i class="ph ph-calendar-check"></i> Reserve Table
+            </a>
+          </div>
+        </div>
+
+        <!-- Trust Badges -->
+        <div class="hero-metrics-strip">
+          <div class="metric-item">
+            <span class="metric-num">4.3 ★</span>
+            <span class="metric-label">Google (1.7K+ reviews)</span>
+          </div>
+          <div class="metric-item">
+            <span class="metric-num">4.0 ★</span>
+            <span class="metric-label">Zomato Dining & Delivery</span>
+          </div>
+          <div class="metric-item">
+            <span class="metric-num">11.7K+</span>
+            <span class="metric-label">Instagram Community</span>
+          </div>
+          <div class="metric-item">
+            <span class="metric-num">₹1,000</span>
+            <span class="metric-label">Average Spend for Two</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="hero-visual">
+        <div class="hero-img-stack">
+          <div class="hero-card-featured">
+            <img src="https://images.unsplash.com/photo-1572442388796-11668a67e53d?q=80&w=800&auto=format&fit=crop" alt="Brown Butter Cappuccino at The Daily Kolkata" class="hero-main-img">
+            <div class="hero-dish-badge">
+              <div class="dish-badge-info">
+                <h4>Brown Butter Cappuccino</h4>
+                <p>Nutty brown butter foam, arabica roast</p>
+              </div>
+              <span class="dish-badge-price">₹295</span>
+            </div>
+          </div>
+          <div class="hero-floating-card floating-bottom-left">
+            <img src="https://images.unsplash.com/photo-1621996346565-e3d5d6281541?q=80&w=400&auto=format&fit=crop" alt="Creamy Truffle Pasta">
+            <div class="floating-text">
+              <strong>Creamy Truffle Pasta</strong>
+              <span>Wild mushrooms & aged parmesan • ₹425</span>
+            </div>
+          </div>
+          <div class="hero-floating-card floating-top-right">
+            <i class="ph ph-clock-countdown" style="font-size: 1.5rem; color: var(--accent-primary);"></i>
+            <div class="floating-text">
+              <strong>Today: 12:00 PM – 10:30 PM</strong>
+              <span>Sundays Brunch from 10:30 AM</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 3 Ways to Order Section -->
+  <section class="section order-channels-section">
+    <div class="container">
+      <div class="section-header text-center">
+        <span class="section-tag">Convenience at your fingertips</span>
+        <h2 class="section-title">Order From The Daily Anywhere in Kolkata</h2>
+        <p class="section-lead">Choose your preferred ordering experience — direct from our kitchen with 10% discount, or through your favorite delivery partners.</p>
+      </div>
+
+      <div class="order-channel-grid">
+        <!-- Direct Website / WhatsApp Ordering -->
+        <div class="order-channel-card featured-channel">
+          <span class="channel-tag-pill">Best Price • 10% Off</span>
+          <div class="channel-icon-wrap direct-bg">
+            <i class="ph ph-shopping-bag"></i>
+          </div>
+          <h4>Direct Online Order & Cart</h4>
+          <p>Order directly on this website with 0% middleman fees. Enjoy instant cart customization, 10% coupon code <strong>DAILY10</strong>, and 1-tap WhatsApp order dispatch.</p>
+          <div style="display: flex; gap: 0.5rem; flex-wrap: wrap;">
+            <a href="menu.html" class="btn btn-primary btn-sm" style="flex: 1;">
+              <i class="ph ph-fork-knife"></i> Open Menu & Cart
+            </a>
+            <a href="https://wa.me/918017099950" target="_blank" class="btn btn-whatsapp btn-sm">
+              <i class="ph ph-whatsapp-logo"></i> WhatsApp
+            </a>
+          </div>
+        </div>
+
+        <!-- Zomato -->
+        <div class="order-channel-card">
+          <div class="channel-icon-wrap zomato-bg">
+            <i class="ph ph-storefront"></i>
+          </div>
+          <h4>Order on Zomato</h4>
+          <p>Rated 4.0/5 with 663+ reviews. Explore the full Continental and Italian bistro menu with live tracking and doorstep delivery across Kolkata.</p>
+          <a href="https://www.zomato.com/kolkata/the-daily-desapriya-park" target="_blank" rel="noopener" class="btn btn-zomato btn-block">
+            <i class="ph ph-arrow-square-out"></i> Order on Zomato
+          </a>
+        </div>
+
+        <!-- Swiggy -->
+        <div class="order-channel-card">
+          <div class="channel-icon-wrap swiggy-bg">
+            <i class="ph ph-moped"></i>
+          </div>
+          <h4>Order on Swiggy</h4>
+          <p>Enjoy lightning-fast delivery from our Desapriya Park outlet. Popular dishes packed fresh in eco-friendly tamper-proof containers.</p>
+          <a href="https://www.swiggy.com/city/kolkata/the-daily-cafe-desapriya-park-rest241166" target="_blank" rel="noopener" class="btn btn-swiggy btn-block">
+            <i class="ph ph-arrow-square-out"></i> Order on Swiggy
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Curated Menu Highlights with Instant Add to Cart -->
+  <section class="section highlights-section" id="highlights">
+    <div class="container">
+      <div class="section-header-row">
+        <div>
+          <span class="section-tag">Signature Creations</span>
+          <h2 class="section-title">Menu Highlights Loved by Kolkata</h2>
+          <p class="section-lead">From our iconic Brown Butter Cappuccino to Steak & Fries and decadent Rocher.</p>
+        </div>
+        <a href="menu.html" class="btn btn-secondary">
+          View Complete 30+ Menu <i class="ph ph-arrow-right"></i>
+        </a>
+      </div>
+
+      <div class="menu-grid" id="featuredGrid">
+        <!-- Dish 1: Brown Butter Cappuccino -->
+        <article class="menu-card" data-id="td-coffee-brownbutter">
+          <div class="menu-card-img-wrap">
+            <img src="https://images.unsplash.com/photo-1572442388796-11668a67e53d?q=80&w=800&auto=format&fit=crop" alt="Brown Butter Cappuccino" loading="lazy" class="menu-card-img">
+            <span class="menu-card-badge">Must Try Coffee</span>
+            <div class="diet-indicator diet-badge-veg">
+              <i class="ph ph-leaf"></i>
+              <span>Veg</span>
+            </div>
+          </div>
+          <div class="menu-card-body">
+            <div class="menu-card-header">
+              <h3 class="menu-card-title">Brown Butter Cappuccino</h3>
+              <div class="menu-card-price">₹295</div>
+            </div>
+            <p class="menu-card-desc">Espresso pulled from single-origin arabica beans, layered with nutty caramelized brown butter foam and organic cinnamon.</p>
+            <div class="menu-card-tags">
+              <span class="tasting-tag"><i class="ph ph-sparkle"></i> Nutty Brown Butter</span>
+              <span class="tasting-tag"><i class="ph ph-sparkle"></i> Velvety Foam</span>
+            </div>
+            <div class="menu-card-footer">
+              <span class="portion-label"><i class="ph ph-coffee"></i> Artisanal Cup</span>
+              <button class="btn btn-primary btn-sm quick-add-cart-btn" data-id="td-coffee-brownbutter">
+                <i class="ph ph-plus-circle"></i> Add to Cart
+              </button>
+            </div>
+          </div>
+        </article>
+
+        <!-- Dish 2: Creamy Truffle Pasta -->
+        <article class="menu-card" data-id="td-pasta-truffle">
+          <div class="menu-card-img-wrap">
+            <img src="https://images.unsplash.com/photo-1621996346565-e3d5d6281541?q=80&w=800&auto=format&fit=crop" alt="Creamy Truffle Pasta" loading="lazy" class="menu-card-img">
+            <span class="menu-card-badge">Signature Dish</span>
+            <div class="diet-indicator diet-badge-veg">
+              <i class="ph ph-leaf"></i>
+              <span>Veg</span>
+            </div>
+          </div>
+          <div class="menu-card-body">
+            <div class="menu-card-header">
+              <h3 class="menu-card-title">Creamy Truffle Pasta</h3>
+              <div class="menu-card-price">₹425</div>
+            </div>
+            <p class="menu-card-desc">Fettuccine or penne bathed in a luscious black truffle emulsion, sautéed wild forest mushrooms, and aged 24-month Grana Padano.</p>
+            <div class="menu-card-tags">
+              <span class="tasting-tag"><i class="ph ph-sparkle"></i> Black Truffle</span>
+              <span class="tasting-tag"><i class="ph ph-sparkle"></i> Wild Mushrooms</span>
+            </div>
+            <div class="menu-card-footer">
+              <span class="portion-label"><i class="ph ph-bowl-food"></i> Chef Signature</span>
+              <button class="btn btn-primary btn-sm quick-add-cart-btn" data-id="td-pasta-truffle">
+                <i class="ph ph-plus-circle"></i> Add to Cart
+              </button>
+            </div>
+          </div>
+        </article>
+
+        <!-- Dish 3: Steak and Fries Tenderloin -->
+        <article class="menu-card" data-id="td-mains-steakfries">
+          <div class="menu-card-img-wrap">
+            <img src="https://images.unsplash.com/photo-1544025162-d76694265947?q=80&w=800&auto=format&fit=crop" alt="Steak and Fries Tenderloin" loading="lazy" class="menu-card-img">
+            <span class="menu-card-badge">Bestseller Main</span>
+            <div class="diet-indicator diet-badge-nonveg">
+              <i class="ph ph-fork-knife"></i>
+              <span>Non-Veg</span>
+            </div>
+          </div>
+          <div class="menu-card-body">
+            <div class="menu-card-header">
+              <h3 class="menu-card-title">Steak and Fries Tenderloin</h3>
+              <div class="menu-card-price">₹565</div>
+            </div>
+            <p class="menu-card-desc">Hand-trimmed prime tenderloin steak grilled tender and juicy, with cafe-style shoestring fries, herb butter, and roasted garlic jus.</p>
+            <div class="menu-card-tags">
+              <span class="tasting-tag"><i class="ph ph-sparkle"></i> Prime Tenderloin</span>
+              <span class="tasting-tag"><i class="ph ph-sparkle"></i> Garlic Herb Butter</span>
+            </div>
+            <div class="menu-card-footer">
+              <span class="portion-label"><i class="ph ph-fire"></i> Full Platter</span>
+              <button class="btn btn-primary btn-sm quick-add-cart-btn" data-id="td-mains-steakfries">
+                <i class="ph ph-plus-circle"></i> Add to Cart
+              </button>
+            </div>
+          </div>
+        </article>
+
+        <!-- Dish 4: Blueberry Pancakes -->
+        <article class="menu-card" data-id="td-brunch-pancakes">
+          <div class="menu-card-img-wrap">
+            <img src="https://images.unsplash.com/photo-1528207776546-365bb710ee93?q=80&w=800&auto=format&fit=crop" alt="Blueberry Pancakes" loading="lazy" class="menu-card-img">
+            <span class="menu-card-badge">Guest Favourite</span>
+            <div class="diet-indicator diet-badge-veg">
+              <i class="ph ph-leaf"></i>
+              <span>Veg</span>
+            </div>
+          </div>
+          <div class="menu-card-body">
+            <div class="menu-card-header">
+              <h3 class="menu-card-title">Blueberry Pancakes</h3>
+              <div class="menu-card-price">₹345</div>
+            </div>
+            <p class="menu-card-desc">Fluffy buttermilk pancake stack with wild blueberries, whipped vanilla mascarpone, warm pure maple syrup, and toasted almonds.</p>
+            <div class="menu-card-tags">
+              <span class="tasting-tag"><i class="ph ph-sparkle"></i> Wild Blueberries</span>
+              <span class="tasting-tag"><i class="ph ph-sparkle"></i> Mascarpone</span>
+            </div>
+            <div class="menu-card-footer">
+              <span class="portion-label"><i class="ph ph-pancake"></i> Stack of 3</span>
+              <button class="btn btn-primary btn-sm quick-add-cart-btn" data-id="td-brunch-pancakes">
+                <i class="ph ph-plus-circle"></i> Add to Cart
+              </button>
+            </div>
+          </div>
+        </article>
+
+        <!-- Dish 5: Korean Cream Cheese Bun -->
+        <article class="menu-card" data-id="td-brunch-koreanbun">
+          <div class="menu-card-img-wrap">
+            <img src="https://images.unsplash.com/photo-1509440159596-0249088772ff?q=80&w=800&auto=format&fit=crop" alt="Korean Cream Cheese Bun" loading="lazy" class="menu-card-img">
+            <span class="menu-card-badge">Viral Hit</span>
+            <div class="diet-indicator diet-badge-veg">
+              <i class="ph ph-leaf"></i>
+              <span>Veg</span>
+            </div>
+          </div>
+          <div class="menu-card-body">
+            <div class="menu-card-header">
+              <h3 class="menu-card-title">Korean Cream Cheese Bun</h3>
+              <div class="menu-card-price">₹310</div>
+            </div>
+            <p class="menu-card-desc">Freshly baked soft brioche bun cut into petals, piped with sweetened cream cheese, drenched in roasted garlic butter glaze.</p>
+            <div class="menu-card-tags">
+              <span class="tasting-tag"><i class="ph ph-sparkle"></i> Garlic Butter</span>
+              <span class="tasting-tag"><i class="ph ph-sparkle"></i> Sweet Cream</span>
+            </div>
+            <div class="menu-card-footer">
+              <span class="portion-label"><i class="ph ph-bread"></i> Warm Brioche</span>
+              <button class="btn btn-primary btn-sm quick-add-cart-btn" data-id="td-brunch-koreanbun">
+                <i class="ph ph-plus-circle"></i> Add to Cart
+              </button>
+            </div>
+          </div>
+        </article>
+
+        <!-- Dish 6: Rocher -->
+        <article class="menu-card" data-id="td-dessert-rocher">
+          <div class="menu-card-img-wrap">
+            <img src="https://images.unsplash.com/photo-1578985545062-69928b1d9587?q=80&w=800&auto=format&fit=crop" alt="Rocher Dessert" loading="lazy" class="menu-card-img">
+            <span class="menu-card-badge">Most Ordered Dessert</span>
+            <div class="diet-indicator diet-badge-veg">
+              <i class="ph ph-leaf"></i>
+              <span>Veg</span>
+            </div>
+          </div>
+          <div class="menu-card-body">
+            <div class="menu-card-header">
+              <h3 class="menu-card-title">Rocher</h3>
+              <div class="menu-card-price">₹345</div>
+            </div>
+            <p class="menu-card-desc">Rich Belgian dark chocolate and roasted hazelnut mousse with a molten praline core, encased in a crunchy roasted hazelnut rocher shell.</p>
+            <div class="menu-card-tags">
+              <span class="tasting-tag"><i class="ph ph-sparkle"></i> Belgian Chocolate</span>
+              <span class="tasting-tag"><i class="ph ph-sparkle"></i> Praline Core</span>
+            </div>
+            <div class="menu-card-footer">
+              <span class="portion-label"><i class="ph ph-cookie"></i> Indulgent Dome</span>
+              <button class="btn btn-primary btn-sm quick-add-cart-btn" data-id="td-dessert-rocher">
+                <i class="ph ph-plus-circle"></i> Add to Cart
+              </button>
+            </div>
+          </div>
+        </article>
+      </div>
+
+      <div class="text-center" style="margin-top: 2.5rem;">
+        <a href="menu.html" class="btn btn-primary btn-lg">
+          <i class="ph ph-book-open"></i> Explore Entire Menu & Customizations
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- About The Daily & Chef Urvika Kanoi -->
+  <section class="section about-preview-section">
+    <div class="container">
+      <div class="about-grid">
+        <div class="about-visual">
+          <img src="https://images.unsplash.com/photo-1554118811-1e0d58224f24?q=80&w=800&auto=format&fit=crop" alt="The Daily Cafe Ambiance" class="about-img-main">
+          <div class="about-experience-card">
+            <span class="exp-number">11.7K+</span>
+            <span class="exp-text">Food Lovers in our Kolkata Tribe (@thedailykolkata)</span>
+          </div>
+        </div>
+
+        <div class="about-text-content">
+          <span class="section-tag">Chef Urvika Kanoi's Vision</span>
+          <h2 class="section-title">A Tucked-Away European Sanctuary in Desapriya Park</h2>
+          <p class="about-lead">
+            "Although it appears quaint from the outside, stepping into The Daily reveals a surprisingly spacious haven of natural light, Paris bistro chairs, and the intoxicating aroma of freshly ground espresso."
+          </p>
+          <p>
+            Founded by Chef Urvika Kanoi, The Daily serves global cuisine with a relentless devotion to fresh, sustainable local produce. Together with our Bombay sister bistro, <strong>@cafeduco</strong> in Bandra, we bring world-class European culinary technique and warm hospitality to South Kolkata.
+          </p>
+
+          <div class="about-features-list">
+            <div class="feat-item">
+              <i class="ph ph-plant"></i>
+              <div>
+                <strong>Fresh Local Produce</strong>
+                <p>Every pasta sauce, brioche bun, and compound butter is prepared fresh daily.</p>
+              </div>
+            </div>
+            <div class="feat-item">
+              <i class="ph ph-coffee-bean"></i>
+              <div>
+                <strong>Single-Origin Coffee</strong>
+                <p>Specialty arabica beans extracted with precision — from flat whites to brown butter brews.</p>
+              </div>
+            </div>
+          </div>
+
+          <div style="margin-top: 1.5rem; display: flex; gap: 1rem; flex-wrap: wrap;">
+            <a href="about.html" class="btn btn-secondary">Read Our Full Story</a>
+            <a href="reservations.html" class="btn btn-primary">Book a Table</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Popular Times & Operating Hours -->
+  <section class="section hours-location-section">
+    <div class="container">
+      <div class="location-hours-grid">
+        <!-- Hours & Popular Times Chart -->
+        <div class="hours-card">
+          <div class="hours-card-header">
+            <i class="ph ph-clock" style="font-size: 2rem; color: var(--accent-primary);"></i>
+            <div>
+              <h3>Bistro Hours & Peak Times</h3>
+              <p>Lake Market / Desapriya Park, Kolkata</p>
+            </div>
+          </div>
+
+          <ul class="hours-schedule-list" id="hoursList">
+            <li data-day="1">
+              <span>Monday</span>
+              <strong>12:00 PM – 10:30 PM</strong>
+            </li>
+            <li data-day="2">
+              <span>Tuesday</span>
+              <strong>12:00 PM – 10:30 PM</strong>
+            </li>
+            <li data-day="3">
+              <span>Wednesday</span>
+              <strong>12:00 PM – 10:30 PM</strong>
+            </li>
+            <li data-day="4">
+              <span>Thursday</span>
+              <strong>12:00 PM – 10:30 PM</strong>
+            </li>
+            <li data-day="5">
+              <span>Friday</span>
+              <strong>12:00 PM – 10:30 PM</strong>
+            </li>
+            <li data-day="6">
+              <span>Saturday</span>
+              <strong>12:00 PM – 10:30 PM</strong>
+            </li>
+            <li data-day="0" class="sunday-special">
+              <span>Sunday (Special Sunday Brunch)</span>
+              <strong>10:30 AM – 10:30 PM</strong>
+            </li>
+          </ul>
+
+          <!-- Popular Times Chart -->
+          <div class="popular-times-container">
+            <div class="popular-times-header">
+              <strong>Popular Times (Google Trends)</strong>
+              <span class="live-busy-indicator"><i class="ph ph-users"></i> Peak: 6:00 PM – 11:00 PM</span>
+            </div>
+            <div class="popular-bars-chart">
+              <div class="chart-bar-col"><div class="chart-bar" style="height: 25%;"></div><span class="chart-bar-time">12p</span></div>
+              <div class="chart-bar-col"><div class="chart-bar" style="height: 35%;"></div><span class="chart-bar-time">2p</span></div>
+              <div class="chart-bar-col"><div class="chart-bar" style="height: 40%;"></div><span class="chart-bar-time">4p</span></div>
+              <div class="chart-bar-col"><div class="chart-bar peak-hour" style="height: 85%;"></div><span class="chart-bar-time">6p</span></div>
+              <div class="chart-bar-col"><div class="chart-bar peak-hour" style="height: 100%;"></div><span class="chart-bar-time">8p</span></div>
+              <div class="chart-bar-col"><div class="chart-bar peak-hour" style="height: 90%;"></div><span class="chart-bar-time">10p</span></div>
+            </div>
+            <div class="popular-times-legend">
+              <span>Typical stay: 45 min – 2.5 hrs</span>
+              <span>Afternoons: Quiet & cozy</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Location, Directions & Contact Card -->
+        <div class="location-details-card">
+          <div class="hours-card-header">
+            <i class="ph ph-map-pin" style="font-size: 2rem; color: var(--accent-primary);"></i>
+            <div>
+              <h3>How to Find Us</h3>
+              <p>In the vibrant heart of South Kolkata</p>
+            </div>
+          </div>
+
+          <div class="address-highlight-box">
+            <h4><i class="ph ph-buildings"></i> Physical Address</h4>
+            <p>5, Satyen Dutta Road, Lake Market, Kalighat, Desapriya Park, Kolkata, West Bengal 700029</p>
+            <div class="landmark-alert">
+              <i class="ph ph-info"></i>
+              <span><strong>Landmark:</strong> Same lane as the iconic Maharaja Tea Stall, right off Rash Behari Avenue, 2 minutes from Desapriya Park.</span>
+            </div>
+          </div>
+
+          <div class="action-buttons-stack" style="margin-top: 1.25rem; display: flex; flex-direction: column; gap: 0.75rem;">
+            <a href="https://www.google.com/maps/place/the+daily+kolkata/data=!4m2!3m1!1s0x3a0271fad96c306d:0x698a6b3fdb6e4c73?sa=X&ved=1t:242&ictx=111" target="_blank" rel="noopener" class="btn btn-direction btn-lg">
+              <i class="ph ph-map-trifold"></i> Open in Google Maps & Get Directions
+            </a>
+            <a href="tel:+918017099950" class="btn btn-secondary btn-lg">
+              <i class="ph ph-phone"></i> Call Hotline: +91 80170 99950
+            </a>
+            <a href="https://wa.me/918017099950" target="_blank" class="btn btn-whatsapp btn-lg">
+              <i class="ph ph-whatsapp-logo"></i> Chat with Reception on WhatsApp
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Real Reviews from Google & Zomato -->
+  <section class="section reviews-section">
+    <div class="container">
+      <div class="section-header text-center">
+        <span class="section-tag">Word of Mouth</span>
+        <h2 class="section-title">What Kolkata Diners Say</h2>
+        <div class="google-reviews-badge">
+          <div class="g-rating-stars">★★★★★</div>
+          <div class="g-rating-text"><strong>4.3 / 5.0</strong> based on 1,673+ verified Google reviews</div>
+        </div>
+      </div>
+
+      <div class="reviews-grid">
+        <div class="review-card">
+          <div class="review-stars">★★★★★</div>
+          <p class="review-quote">"Absolute favourite place in town! Coffees are good but the food is next level. Their goat cheese spread with toast is a must have for people who love chip and dip style food."</p>
+          <div class="reviewer-meta">
+            <strong>Food & Coffee Enthusiast</strong>
+            <span>Verified Zomato Diner</span>
+          </div>
+        </div>
+
+        <div class="review-card">
+          <div class="review-stars">★★★★★</div>
+          <p class="review-quote">"We ordered Beef steak, Salmon, ravioli pasta, hot wings and truffle fries. Generous portions, beautifully plated, and cooked to juicy perfection."</p>
+          <div class="reviewer-meta">
+            <strong>Calcutta Food Guide</strong>
+            <span>Google Reviewer</span>
+          </div>
+        </div>
+
+        <div class="review-card">
+          <div class="review-stars">★★★★★</div>
+          <p class="review-quote">"The ambience is amazing with great service, polite staff and good music. Tucked in the lane next to Maharaja tea stall, it is a true hidden gem for brunch."</p>
+          <div class="reviewer-meta">
+            <strong>Sunday Brunch Regular</strong>
+            <span>Google Reviewer</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Sticky Bottom Cart Bar on Mobile -->
+  <div class="mobile-sticky-cart-bar">
+    <button class="btn btn-sticky-cart" onclick="openCartDrawer()">
+      <div class="sticky-cart-left">
+        <span class="sticky-cart-count-badge" id="mobileStickyBadge">0 items</span>
+        <span>View Full Cart</span>
+      </div>
+      <strong class="sticky-cart-right" id="mobileStickyTotal">₹0 →</strong>
+    </button>
+  </div>
+
+  <!-- Footer -->
+  <footer class="site-footer">
+    <div class="container footer-container">
+      <div class="footer-col brand-col">
+        <div class="logo-text">
+          <span class="brand-name">THE DAILY</span>
+          <span class="brand-sub">CAFE & BISTRO • KOLKATA</span>
+        </div>
+        <p class="footer-desc">
+          Global cuisine, specially curated coffees, and wholesome comfort food prepared with fresh local produce in Desapriya Park. In collaboration with Bombay amigo @cafeduco.
+        </p>
+        <div class="footer-social-links">
+          <a href="https://www.instagram.com/thedailykolkata/?hl=en" target="_blank" rel="noopener" title="Instagram"><i class="ph ph-instagram-logo"></i></a>
+          <a href="https://www.facebook.com/thedailykolkata/" target="_blank" rel="noopener" title="Facebook"><i class="ph ph-facebook-logo"></i></a>
+          <a href="tel:+918017099950" title="Direct Phone"><i class="ph ph-phone"></i></a>
+          <a href="https://wa.me/918017099950" target="_blank" rel="noopener" title="WhatsApp"><i class="ph ph-whatsapp-logo"></i></a>
+          <a href="https://www.google.com/maps/place/the+daily+kolkata/data=!4m2!3m1!1s0x3a0271fad96c306d:0x698a6b3fdb6e4c73?sa=X&ved=1t:242&ictx=111" target="_blank" rel="noopener" title="Google Maps"><i class="ph ph-map-pin"></i></a>
+        </div>
+      </div>
+
+      <div class="footer-col">
+        <h4>Navigation</h4>
+        <ul class="footer-nav">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="menu.html">Full Menu & Ordering</a></li>
+          <li><a href="about.html">Our Story & Chef</a></li>
+          <li><a href="reservations.html">Book a Table</a></li>
+          <li><a href="contact.html">Contact & Directions</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-col">
+        <h4>Order Online</h4>
+        <ul class="footer-nav">
+          <li><a href="menu.html">Direct Website Cart (10% Off)</a></li>
+          <li><a href="https://www.zomato.com/kolkata/the-daily-desapriya-park" target="_blank" rel="noopener">The Daily on Zomato</a></li>
+          <li><a href="https://www.swiggy.com/city/kolkata/the-daily-cafe-desapriya-park-rest241166" target="_blank" rel="noopener">The Daily on Swiggy</a></li>
+          <li><a href="https://wa.me/918017099950" target="_blank">Order via WhatsApp</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-col">
+        <h4>Visit The Daily</h4>
+        <p class="footer-contact-line"><i class="ph ph-map-pin"></i> 5, Satyen Dutta Road, Lake Market, Kalighat, Kolkata - 700029</p>
+        <p class="footer-contact-line"><i class="ph ph-phone"></i> +91 80170 99950</p>
+        <p class="footer-contact-line"><i class="ph ph-clock"></i> Daily: 12:00 PM – 10:30 PM (Sun from 10:30 AM)</p>
+        <div style="margin-top: 1rem;">
+          <button class="btn btn-secondary btn-sm open-order-modal-btn">Online Ordering Hub</button>
+        </div>
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      <div class="container footer-bottom-content">
+        <p>© 2026 The Daily Kolkata. Handcrafted by Chef Urvika Kanoi & Team.</p>
+        <p>5, Satyen Dutta Road (Lane next to Maharaja Tea Stall, near Desapriya Park).</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Slide-Out Cart Drawer -->
+  <div class="cart-drawer-backdrop" id="cartBackdrop"></div>
+  <aside class="cart-drawer" id="cartDrawer" aria-label="Shopping Cart">
+    <div class="cart-drawer-header">
+      <div class="cart-header-title">
+        <i class="ph ph-shopping-bag"></i>
+        <h3>Your Plate & Order</h3>
+      </div>
+      <button class="icon-btn" id="closeCartDrawerBtn" aria-label="Close cart">
+        <i class="ph ph-x"></i>
+      </button>
+    </div>
+
+    <!-- Order Type Selector -->
+    <div class="cart-order-type-tabs">
+      <label class="order-type-radio">
+        <input type="radio" name="drawerOrderType" value="delivery" checked>
+        <span><i class="ph ph-moped"></i> Home Delivery</span>
+      </label>
+      <label class="order-type-radio">
+        <input type="radio" name="drawerOrderType" value="takeaway">
+        <span><i class="ph ph-package"></i> Takeaway</span>
+      </label>
+      <label class="order-type-radio">
+        <input type="radio" name="drawerOrderType" value="dinein">
+        <span><i class="ph ph-fork-knife"></i> Dine-In</span>
+      </label>
+    </div>
+
+    <div class="cart-drawer-body" id="cartDrawerBody">
+      <div class="cart-items-container" id="cartDrawerItems">
+        <!-- Rendered dynamically by app.js -->
+      </div>
+    </div>
+
+    <!-- Cart Footer with Pricing & Checkout -->
+    <div class="cart-drawer-footer">
+      <!-- Promo Code Input -->
+      <div class="cart-promo-box">
+        <input type="text" id="cartPromoInput" placeholder="Enter coupon (DAILY10)" class="form-control form-control-sm">
+        <button class="btn btn-secondary btn-sm" id="applyPromoBtn">Apply</button>
+      </div>
+
+      <!-- Tip Selector -->
+      <div class="cart-tip-strip">
+        <span>Add Chef Tip:</span>
+        <button class="tip-btn active" data-tip="0">0%</button>
+        <button class="tip-btn" data-tip="5">5%</button>
+        <button class="tip-btn" data-tip="10">10%</button>
+      </div>
+
+      <!-- Price Breakdown -->
+      <div class="cart-summary-breakdown">
+        <div class="summary-line">
+          <span>Subtotal</span>
+          <span id="cartSubtotal">₹0</span>
+        </div>
+        <div class="summary-line" id="cartDiscountRow" style="display: none; color: #6cd27d;">
+          <span>Promo Discount (DAILY10)</span>
+          <span id="cartDiscountAmount">-₹0</span>
+        </div>
+        <div class="summary-line">
+          <span>GST (5%)</span>
+          <span id="cartGst">₹0</span>
+        </div>
+        <div class="summary-line">
+          <span>Delivery Fee</span>
+          <span id="cartDeliveryFee">₹0</span>
+        </div>
+        <div class="summary-line total-line">
+          <span>Grand Total</span>
+          <span id="cartTotal">₹0</span>
+        </div>
+      </div>
+
+      <!-- Checkout Trigger Button -->
+      <button class="btn btn-primary btn-block btn-lg" id="cartCheckoutBtn">
+        Proceed to Checkout <i class="ph ph-arrow-right"></i>
+      </button>
+    </div>
+  </aside>
+
+  <!-- Online Order Options Modal (Hub for Direct / Zomato / Swiggy) -->
+  <div class="bistro-modal" id="onlineOrderModal">
+    <div class="bistro-modal-dialog">
+      <div class="bistro-modal-header">
+        <h3>Order From The Daily Online</h3>
+        <button class="bistro-modal-close-btn" id="closeOnlineOrderModalBtn"><i class="ph ph-x"></i></button>
+      </div>
+      <div class="bistro-modal-body">
+        <p style="color: var(--text-secondary); margin-bottom: 1.25rem;">Select your preferred service to enjoy The Daily's gourmet cuisine at your door or table:</p>
+        
+        <div style="display: flex; flex-direction: column; gap: 1rem;">
+          <!-- Option 1: Direct Cart -->
+          <div style="background: var(--bg-card); border: 2px solid var(--accent-primary); border-radius: var(--radius-md); padding: 1.25rem; display: flex; justify-content: space-between; align-items: center;">
+            <div>
+              <div style="display: flex; align-items: center; gap: 0.5rem; margin-bottom: 0.25rem;">
+                <strong style="font-size: 1.1rem; color: var(--text-primary);">Direct Website Order</strong>
+                <span style="background: var(--accent-primary); color: #fff; font-size: 0.7rem; font-weight: 700; padding: 2px 6px; border-radius: 4px;">RECOMMENDED</span>
+              </div>
+              <p style="font-size: 0.85rem; color: var(--text-secondary); margin: 0;">0% platform markup • Use code <strong>DAILY10</strong> for 10% off • WhatsApp order support</p>
+            </div>
+            <a href="menu.html" class="btn btn-primary btn-sm">Start Order</a>
+          </div>
+
+          <!-- Option 2: Zomato -->
+          <div style="background: var(--bg-card); border: 1px solid var(--border-subtle); border-radius: var(--radius-md); padding: 1.25rem; display: flex; justify-content: space-between; align-items: center;">
+            <div>
+              <strong style="font-size: 1.1rem; color: var(--text-primary); display: block; margin-bottom: 0.25rem;">Zomato Delivery</strong>
+              <p style="font-size: 0.85rem; color: var(--text-secondary); margin: 0;">4.0 ★ (663+ votes) • Live GPS tracking • Desapriya Park</p>
+            </div>
+            <a href="https://www.zomato.com/kolkata/the-daily-desapriya-park" target="_blank" rel="noopener" class="btn btn-zomato btn-sm">Zomato App</a>
+          </div>
+
+          <!-- Option 3: Swiggy -->
+          <div style="background: var(--bg-card); border: 1px solid var(--border-subtle); border-radius: var(--radius-md); padding: 1.25rem; display: flex; justify-content: space-between; align-items: center;">
+            <div>
+              <strong style="font-size: 1.1rem; color: var(--text-primary); display: block; margin-bottom: 0.25rem;">Swiggy Delivery</strong>
+              <p style="font-size: 0.85rem; color: var(--text-secondary); margin: 0;">Fast delivery • Italian & Continental specialties</p>
+            </div>
+            <a href="https://www.swiggy.com/city/kolkata/the-daily-cafe-desapriya-park-rest241166" target="_blank" rel="noopener" class="btn btn-swiggy btn-sm">Swiggy App</a>
+          </div>
+
+          <!-- Option 4: Direct WhatsApp Hotline -->
+          <div style="background: var(--bg-card); border: 1px solid var(--border-subtle); border-radius: var(--radius-md); padding: 1.25rem; display: flex; justify-content: space-between; align-items: center;">
+            <div>
+              <strong style="font-size: 1.1rem; color: var(--text-primary); display: block; margin-bottom: 0.25rem;">WhatsApp Hotline / Call</strong>
+              <p style="font-size: 0.85rem; color: var(--text-secondary); margin: 0;">Direct bistro line: <strong>+91 80170 99950</strong></p>
+            </div>
+            <a href="https://wa.me/918017099950" target="_blank" class="btn btn-whatsapp btn-sm">WhatsApp</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Customization Modal -->
+  <div class="bistro-modal" id="customizeModal">
+    <div class="bistro-modal-dialog">
+      <div class="bistro-modal-header">
+        <h3 id="customizeModalTitle">Customize Dish</h3>
+        <button class="bistro-modal-close-btn" id="closeCustomizeModalBtn"><i class="ph ph-x"></i></button>
+      </div>
+      <div class="bistro-modal-body" id="customizeModalBody">
+        <!-- Rendered by app.js -->
+      </div>
+    </div>
+  </div>
+
+  <!-- Checkout Modal -->
+  <div class="bistro-modal" id="checkoutModal">
+    <div class="bistro-modal-dialog">
+      <div class="bistro-modal-header">
+        <h3>Complete Your Order</h3>
+        <button class="bistro-modal-close-btn" id="closeCheckoutModalBtn"><i class="ph ph-x"></i></button>
+      </div>
+      <div class="bistro-modal-body">
+        <form id="checkoutForm">
+          <div class="form-group" style="margin-bottom: 1rem;">
+            <label class="form-label">Full Name *</label>
+            <input type="text" id="checkoutName" class="form-control" required placeholder="e.g. Rahul Sen">
+          </div>
+          <div class="form-group" style="margin-bottom: 1rem;">
+            <label class="form-label">Mobile Phone Number *</label>
+            <input type="tel" id="checkoutPhone" class="form-control" required placeholder="e.g. +91 98300 XXXXX">
+          </div>
+          <div class="form-group" style="margin-bottom: 1rem;">
+            <label class="form-label">Delivery Address / Landmark (or Table Number if Dine-in) *</label>
+            <textarea id="checkoutAddress" class="form-control" rows="2" required placeholder="e.g. Flat 3B, Southern Avenue, Kolkata or Table #4"></textarea>
+          </div>
+          <div class="form-group" style="margin-bottom: 1rem;">
+            <label class="form-label">Payment Method</label>
+            <div class="radio-pill-group">
+              <label class="pill-radio"><input type="radio" name="checkoutPayment" value="UPI to +91 80170 99950" checked> <span>UPI (GPay / PhonePe / PayTM)</span></label>
+              <label class="pill-radio"><input type="radio" name="checkoutPayment" value="Cash on Delivery / Pickup"> <span>Cash on Delivery</span></label>
+              <label class="pill-radio"><input type="radio" name="checkoutPayment" value="Card at Counter"> <span>Card at Counter</span></label>
+            </div>
+          </div>
+          <div class="form-group" style="margin-bottom: 1rem;">
+            <label class="form-label">Cooking & Delivery Instructions (Optional)</label>
+            <input type="text" id="checkoutNotes" class="form-control" placeholder="e.g. Extra napkins, cutlery, ring doorbell">
+          </div>
+
+          <!-- Checkout Order Summary -->
+          <div style="background: var(--bg-card); padding: 1rem; border-radius: var(--radius-sm); margin-bottom: 1.25rem;">
+            <h4 style="font-size: 0.95rem; margin-bottom: 0.5rem; color: var(--text-primary);">Order Items</h4>
+            <div id="checkoutSummaryList" style="font-size: 0.85rem; max-height: 120px; overflow-y: auto;"></div>
+            <div style="border-top: 1px solid var(--border-subtle); margin-top: 0.5rem; padding-top: 0.5rem; display: flex; justify-content: space-between; font-weight: 700;">
+              <span>Total Payable</span>
+              <span id="checkoutFinalTotal" style="color: var(--accent-primary);">₹0</span>
+            </div>
+          </div>
+
+          <div style="display: flex; gap: 0.75rem; flex-direction: column;">
+            <button type="button" class="btn btn-whatsapp btn-lg" id="checkoutWhatsAppBtn">
+              <i class="ph ph-whatsapp-logo"></i> Send Order via WhatsApp (+91 80170 99950)
+            </button>
+            <button type="submit" class="btn btn-primary btn-lg">
+              <i class="ph ph-check-circle"></i> Place Direct Order & View Receipt
+            </button>
+            <button type="button" class="btn btn-secondary" id="cancelCheckoutBtn">Cancel</button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+
+  <!-- Order Success / Receipt Modal -->
+  <div class="bistro-modal" id="orderSuccessModal">
+    <div class="bistro-modal-dialog">
+      <div class="bistro-modal-header">
+        <h3>Order Placed Successfully!</h3>
+        <button class="bistro-modal-close-btn" id="closeOrderSuccessBtn"><i class="ph ph-x"></i></button>
+      </div>
+      <div class="bistro-modal-body">
+        <div id="orderSuccessTicket">
+          <!-- Rendered by app.js -->
+        </div>
+        <div style="margin-top: 1.25rem; display: flex; gap: 0.75rem;">
+          <button class="btn btn-secondary btn-block" id="printReceiptBtn">
+            <i class="ph ph-printer"></i> Print / Save Receipt
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Reservation Ticket Modal -->
+  <div class="bistro-modal" id="resTicketModal">
+    <div class="bistro-modal-dialog">
+      <div class="bistro-modal-header">
+        <h3>Table Booking Confirmed</h3>
+        <button class="bistro-modal-close-btn" id="closeResTicketBtn"><i class="ph ph-x"></i></button>
+      </div>
+      <div class="bistro-modal-body">
+        <div id="resTicketBody">
+          <!-- Rendered by app.js -->
+        </div>
+        <div style="margin-top: 1.25rem; display: flex; gap: 0.75rem; flex-direction: column;">
+          <button class="btn btn-whatsapp btn-block" id="resWhatsAppShareBtn">
+            <i class="ph ph-whatsapp-logo"></i> Send Booking to The Daily WhatsApp
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>

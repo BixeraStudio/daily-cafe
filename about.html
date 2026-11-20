@@ -1,0 +1,449 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Our Story & Chef Urvika Kanoi | The Daily Kolkata</title>
+  <meta name="description" content="Discover the story behind The Daily in Desapriya Park, Kolkata. Founded by Chef Urvika Kanoi, celebrating European bistro culture, fresh local produce, artisanal coffee, and our Bombay sister bistro @cafeduco.">
+  
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  
+  <!-- Phosphor Icons -->
+  <link rel="stylesheet" href="https://unpkg.com/@phosphor-icons/web@2.1.1/src/regular/style.css">
+  <link rel="stylesheet" href="https://unpkg.com/@phosphor-icons/web@2.1.1/src/fill/style.css">
+  
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <!-- Top Announcement Bar -->
+  <div class="announcement-bar">
+    <div class="container announcement-content">
+      <div class="announcement-left">
+        <span class="live-dot pulse"></span>
+        <span id="liveStatusText">Open Now • Closes 10:30 PM</span>
+        <span class="sep">•</span>
+        <span class="tag-pill">Direct Line: +91 80170 99950</span>
+        <span>5 Satyen Dutta Road, Desapriya Park, Kolkata</span>
+      </div>
+      <div class="announcement-right">
+        <span class="promo-code">Use code <strong id="copyCoupon" style="cursor: pointer;">DAILY10</strong> for 10% off</span>
+        <div class="social-mini">
+          <a href="tel:+918017099950" title="Call"><i class="ph ph-phone"></i></a>
+          <a href="https://wa.me/918017099950" target="_blank" rel="noopener" title="WhatsApp"><i class="ph ph-whatsapp-logo"></i></a>
+          <a href="https://www.google.com/maps/place/the+daily+kolkata/data=!4m2!3m1!1s0x3a0271fad96c306d:0x698a6b3fdb6e4c73?sa=X&ved=1t:242&ictx=111" target="_blank" rel="noopener" title="Directions"><i class="ph ph-map-pin"></i></a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Header / Navigation -->
+  <header class="site-header" id="header">
+    <div class="container header-container">
+      <a href="index.html" class="brand-logo" aria-label="The Daily Home">
+        <div class="logo-mark">
+          <i class="ph ph-coffee"></i>
+          <span class="steam-ring"></span>
+        </div>
+        <div class="logo-text">
+          <span class="brand-name">THE DAILY</span>
+          <span class="brand-sub">CAFE & BISTRO • KOLKATA</span>
+        </div>
+      </a>
+
+      <!-- Desktop Navigation Links -->
+      <nav class="nav-menu" id="navMenu">
+        <ul class="nav-list">
+          <li><a href="index.html" class="nav-link">Home</a></li>
+          <li><a href="menu.html" class="nav-link">Menu & Order</a></li>
+          <li><a href="about.html" class="nav-link active">Our Story</a></li>
+          <li><a href="reservations.html" class="nav-link">Reservations</a></li>
+          <li><a href="contact.html" class="nav-link">Contact & Map</a></li>
+        </ul>
+      </nav>
+
+      <!-- Action Utilities -->
+      <div class="header-actions">
+        <button class="icon-btn" id="soundToggle" title="Toggle cozy cafe ambient sound" aria-label="Toggle cafe ambiance audio">
+          <i class="ph ph-speaker-slash" id="soundIcon"></i>
+          <span class="audio-label">Ambiance</span>
+        </button>
+
+        <button class="icon-btn" id="themeToggle" title="Switch Theme (Dark Roast / Warm Cream)" aria-label="Toggle Dark or Light theme">
+          <i class="ph ph-sun" id="themeIcon"></i>
+        </button>
+
+        <button class="cart-trigger" id="cartTrigger" aria-label="View Shopping Cart">
+          <i class="ph ph-shopping-bag"></i>
+          <span class="cart-label">Cart</span>
+          <span class="cart-count" id="cartCount">0</span>
+        </button>
+
+        <button class="btn btn-primary btn-sm header-cta open-order-modal-btn">
+          <i class="ph ph-bag"></i> Order Online
+        </button>
+
+        <button class="mobile-toggle" id="mobileMenuToggle" aria-label="Toggle navigation menu">
+          <span class="bar"></span>
+          <span class="bar"></span>
+          <span class="bar"></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Mobile Drawer Menu Overlay -->
+  <div class="mobile-drawer" id="mobileDrawer">
+    <div class="drawer-backdrop" id="drawerBackdrop"></div>
+    <div class="drawer-panel">
+      <div class="drawer-header">
+        <div class="logo-text">
+          <span class="brand-name">THE DAILY</span>
+          <span class="brand-sub">KOLKATA • EST. 2019</span>
+        </div>
+        <button class="icon-btn" id="mobileCloseBtn" aria-label="Close menu">
+          <i class="ph ph-x"></i>
+        </button>
+      </div>
+      <div class="drawer-body">
+        <ul class="mobile-nav-list">
+          <li><a href="index.html" class="mobile-nav-link"><i class="ph ph-house"></i> Home</a></li>
+          <li><a href="menu.html" class="mobile-nav-link"><i class="ph ph-fork-knife"></i> Full Menu & Cart</a></li>
+          <li><a href="about.html" class="mobile-nav-link active"><i class="ph ph-heart"></i> Our Story & Chef</a></li>
+          <li><a href="reservations.html" class="mobile-nav-link"><i class="ph ph-calendar"></i> Book a Table</a></li>
+          <li><a href="contact.html" class="mobile-nav-link"><i class="ph ph-map-pin"></i> Location & Directions</a></li>
+        </ul>
+        <div class="drawer-actions">
+          <button class="btn btn-primary btn-block open-order-modal-btn">
+            <i class="ph ph-moped"></i> Order Food Online
+          </button>
+          <a href="tel:+918017099950" class="btn btn-secondary btn-block">
+            <i class="ph ph-phone"></i> Call +91 80170 99950
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Page Hero -->
+  <section class="page-hero">
+    <div class="container">
+      <span class="page-hero-tag">A Love Letter to Food, Coffee & South Kolkata</span>
+      <h1 class="page-hero-title">The Story of The Daily</h1>
+      <p class="page-hero-lead">How Chef Urvika Kanoi created an intimate, sun-drenched European culinary escape in the quiet bylanes of Desapriya Park.</p>
+    </div>
+  </section>
+
+  <!-- Main Narrative Section -->
+  <section class="section about-main-section">
+    <div class="container">
+      <div class="about-grid">
+        <div class="about-visual">
+          <img src="https://images.unsplash.com/photo-1554118811-1e0d58224f24?q=80&w=800&auto=format&fit=crop" alt="The Daily Kolkata Interior" class="about-img-main">
+          <div class="about-experience-card">
+            <span class="exp-number">2019</span>
+            <span class="exp-text">Bringing Global Bistro Culture to South Kolkata</span>
+          </div>
+        </div>
+
+        <div class="about-text-content">
+          <span class="section-tag">The Philosophy</span>
+          <h2 class="section-title">Where Global Technique Meets Fresh Local Produce</h2>
+          <p class="about-lead">
+            Daily Café is located on Satyen Dutta Road, a small, historic lane near the arterial Rash Behari Avenue. Although it appears quite quaint and understated from the outside, the interior opens up into an airy, surprisingly spacious bistro bathed in natural sunlight.
+          </p>
+          <p>
+            Founded by <strong>Chef Urvika Kanoi</strong>, The Daily was born from a singular passion: creating a space where people can enjoy thoughtfully curated food made without shortcuts. We don't believe in industrial sauces or pre-packaged compromises. From our handmade tortellini and ravioli to slow-infused brown butter cappuccino foam, everything is prepared from scratch using the freshest regional produce.
+          </p>
+          <p>
+            In addition to our Kolkata sanctuary, our sister bistro in Mumbai — <strong>@cafeduco</strong> in Bandra — shares the same culinary ethos: playful, elevated comfort food, vibrant seasonal flavors, and boundless warmth.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 4 Guiding Pillars -->
+  <section class="section pillars-section" style="background: var(--bg-secondary);">
+    <div class="container">
+      <div class="section-header text-center">
+        <span class="section-tag">What Drives Us</span>
+        <h2 class="section-title">The Four Pillars of The Daily</h2>
+        <p class="section-lead">The principles behind every plate, every cup, and every smile at 5 Satyen Dutta Road.</p>
+      </div>
+
+      <div class="order-channel-grid">
+        <div class="order-channel-card">
+          <div class="channel-icon-wrap" style="background: rgba(212, 154, 85, 0.15); color: var(--accent-primary);">
+            <i class="ph ph-plant"></i>
+          </div>
+          <h4>1. Fresh Local Produce</h4>
+          <p>We source fresh vegetables, seafood, herbs, and dairy directly from regional farmers and artisanal purveyors, transforming raw local bounty into refined global dishes.</p>
+        </div>
+
+        <div class="order-channel-card">
+          <div class="channel-icon-wrap" style="background: rgba(212, 154, 85, 0.15); color: var(--accent-primary);">
+            <i class="ph ph-coffee-bean"></i>
+          </div>
+          <h4>2. Curated Coffee Extraction</h4>
+          <p>From our viral Brown Butter Cappuccino and slow-dripped Vietnamese iced brews to ceremonial grade Uji Mango Matcha, each cup is weighed, pulled, and textured with barista precision.</p>
+        </div>
+
+        <div class="order-channel-card">
+          <div class="channel-icon-wrap" style="background: rgba(212, 154, 85, 0.15); color: var(--accent-primary);">
+            <i class="ph ph-bowl-food"></i>
+          </div>
+          <h4>3. Handmade Pastas & Mains</h4>
+          <p>Silky egg dough rolled by hand for forest mushroom tortellinis and ricotta ravioli, complemented by tenderloin steaks and fresh Kolkata Bhetki grilled in lemon herb butter.</p>
+        </div>
+
+        <div class="order-channel-card">
+          <div class="channel-icon-wrap" style="background: rgba(212, 154, 85, 0.15); color: var(--accent-primary);">
+            <i class="ph ph-sparkle"></i>
+          </div>
+          <h4>4. Cozy Intimate Ambiance</h4>
+          <p>Warm ambient lighting, curated vinyl and acoustic playlists, plush seating, and polite attentive service make every visit feel like a leisurely European vacation.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Sister Cafe & Community -->
+  <section class="section sister-cafe-section">
+    <div class="container">
+      <div class="about-grid" style="align-items: center;">
+        <div class="about-text-content">
+          <span class="section-tag">Cross-City Brotherhood</span>
+          <h2 class="section-title">Our Bombay Amigo: Cafe Duco</h2>
+          <p>
+            Food connects cities. In Bandra, Mumbai, our partner bistro <strong>@cafeduco</strong> explores Latin American and European bistro dishes with equal vigor. This cross-pollination of recipes, culinary experiments, and seasonal specials keeps our menu constantly evolving and exciting.
+          </p>
+          <div style="display: flex; gap: 1rem; margin-top: 1.5rem; flex-wrap: wrap;">
+            <a href="https://www.instagram.com/thedailykolkata/?hl=en" target="_blank" rel="noopener" class="btn btn-secondary">
+              <i class="ph ph-instagram-logo"></i> Follow @thedailykolkata (11.7K+)
+            </a>
+            <a href="menu.html" class="btn btn-primary">
+              <i class="ph ph-fork-knife"></i> Explore Our Kolkata Menu
+            </a>
+          </div>
+        </div>
+        <div class="about-visual">
+          <img src="https://images.unsplash.com/photo-1501339847302-ac426a4a7cbb?q=80&w=800&auto=format&fit=crop" alt="Coffee Counter at The Daily" class="about-img-main">
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA Banner -->
+  <section class="section" style="background: linear-gradient(135deg, rgba(212, 154, 85, 0.15), var(--bg-card)); border-top: 1px solid var(--border-subtle); border-bottom: 1px solid var(--border-subtle); text-align: center;">
+    <div class="container">
+      <h2 style="font-family: var(--font-heading); font-size: 2.2rem; margin-bottom: 1rem;">Experience The Daily Today</h2>
+      <p style="color: var(--text-secondary); max-width: 600px; margin: 0 auto 2rem;">Join us for Sunday brunch, quiet afternoon coffee, or a lively dinner in Desapriya Park.</p>
+      <div style="display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap;">
+        <a href="reservations.html" class="btn btn-primary btn-lg">Book a Table</a>
+        <a href="menu.html" class="btn btn-secondary btn-lg">Order Online (Add to Cart)</a>
+        <a href="contact.html" class="btn btn-direction btn-lg">Get Directions</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Sticky Bottom Cart Bar on Mobile -->
+  <div class="mobile-sticky-cart-bar">
+    <button class="btn btn-sticky-cart" onclick="openCartDrawer()">
+      <div class="sticky-cart-left">
+        <span class="sticky-cart-count-badge" id="mobileStickyBadge">0 items</span>
+        <span>View Full Cart</span>
+      </div>
+      <strong class="sticky-cart-right" id="mobileStickyTotal">₹0 →</strong>
+    </button>
+  </div>
+
+  <!-- Footer -->
+  <footer class="site-footer">
+    <div class="container footer-container">
+      <div class="footer-col brand-col">
+        <div class="logo-text">
+          <span class="brand-name">THE DAILY</span>
+          <span class="brand-sub">CAFE & BISTRO • KOLKATA</span>
+        </div>
+        <p class="footer-desc">
+          Global cuisine, specially curated coffees, and wholesome comfort food prepared with fresh local produce in Desapriya Park. In collaboration with Bombay amigo @cafeduco.
+        </p>
+        <div class="footer-social-links">
+          <a href="https://www.instagram.com/thedailykolkata/?hl=en" target="_blank" rel="noopener"><i class="ph ph-instagram-logo"></i></a>
+          <a href="https://www.facebook.com/thedailykolkata/" target="_blank" rel="noopener"><i class="ph ph-facebook-logo"></i></a>
+          <a href="tel:+918017099950"><i class="ph ph-phone"></i></a>
+          <a href="https://wa.me/918017099950" target="_blank"><i class="ph ph-whatsapp-logo"></i></a>
+          <a href="https://www.google.com/maps/place/the+daily+kolkata/data=!4m2!3m1!1s0x3a0271fad96c306d:0x698a6b3fdb6e4c73?sa=X&ved=1t:242&ictx=111" target="_blank"><i class="ph ph-map-pin"></i></a>
+        </div>
+      </div>
+
+      <div class="footer-col">
+        <h4>Navigation</h4>
+        <ul class="footer-nav">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="menu.html">Menu & Cart</a></li>
+          <li><a href="about.html">Our Story</a></li>
+          <li><a href="reservations.html">Book Table</a></li>
+          <li><a href="contact.html">Directions & Map</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-col">
+        <h4>Ordering Channels</h4>
+        <ul class="footer-nav">
+          <li><a href="menu.html">Direct Cart (Promo: DAILY10)</a></li>
+          <li><a href="https://www.zomato.com/kolkata/the-daily-desapriya-park" target="_blank" rel="noopener">Order on Zomato</a></li>
+          <li><a href="https://www.swiggy.com/city/kolkata/the-daily-cafe-desapriya-park-rest241166" target="_blank" rel="noopener">Order on Swiggy</a></li>
+          <li><a href="https://wa.me/918017099950" target="_blank">Order via WhatsApp</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-col">
+        <h4>The Daily Kolkata</h4>
+        <p class="footer-contact-line"><i class="ph ph-map-pin"></i> 5 Satyen Dutta Road, Lake Market, Kalighat (Near Maharaja Tea Stall)</p>
+        <p class="footer-contact-line"><i class="ph ph-phone"></i> +91 80170 99950</p>
+        <p class="footer-contact-line"><i class="ph ph-clock"></i> Mon–Sat: 12 PM – 10:30 PM | Sun: 10:30 AM – 10:30 PM</p>
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      <div class="container footer-bottom-content">
+        <p>© 2026 The Daily Kolkata. Handcrafted by Chef Urvika Kanoi & Team.</p>
+        <p>5, Satyen Dutta Road, Desapriya Park, Kolkata, West Bengal 700029.</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Slide-Out Cart Drawer -->
+  <div class="cart-drawer-backdrop" id="cartBackdrop"></div>
+  <aside class="cart-drawer" id="cartDrawer" aria-label="Shopping Cart">
+    <div class="cart-drawer-header">
+      <div class="cart-header-title">
+        <i class="ph ph-shopping-bag"></i>
+        <h3>Your Plate & Order</h3>
+      </div>
+      <button class="icon-btn" id="closeCartDrawerBtn" aria-label="Close cart"><i class="ph ph-x"></i></button>
+    </div>
+
+    <div class="cart-order-type-tabs">
+      <label class="order-type-radio"><input type="radio" name="drawerOrderType" value="delivery" checked><span><i class="ph ph-moped"></i> Delivery</span></label>
+      <label class="order-type-radio"><input type="radio" name="drawerOrderType" value="takeaway"><span><i class="ph ph-package"></i> Takeaway</span></label>
+      <label class="order-type-radio"><input type="radio" name="drawerOrderType" value="dinein"><span><i class="ph ph-fork-knife"></i> Dine-In</span></label>
+    </div>
+
+    <div class="cart-drawer-body" id="cartDrawerBody">
+      <div class="cart-items-container" id="cartDrawerItems"></div>
+    </div>
+
+    <div class="cart-drawer-footer">
+      <div class="cart-promo-box">
+        <input type="text" id="cartPromoInput" placeholder="Enter coupon (DAILY10)" class="form-control form-control-sm">
+        <button class="btn btn-secondary btn-sm" id="applyPromoBtn">Apply</button>
+      </div>
+      <div class="cart-tip-strip">
+        <span>Add Tip:</span>
+        <button class="tip-btn active" data-tip="0">0%</button>
+        <button class="tip-btn" data-tip="5">5%</button>
+        <button class="tip-btn" data-tip="10">10%</button>
+      </div>
+      <div class="cart-summary-breakdown">
+        <div class="summary-line"><span>Subtotal</span><span id="cartSubtotal">₹0</span></div>
+        <div class="summary-line" id="cartDiscountRow" style="display: none; color: #6cd27d;"><span>Promo (DAILY10)</span><span id="cartDiscountAmount">-₹0</span></div>
+        <div class="summary-line"><span>GST (5%)</span><span id="cartGst">₹0</span></div>
+        <div class="summary-line"><span>Delivery Fee</span><span id="cartDeliveryFee">₹0</span></div>
+        <div class="summary-line total-line"><span>Grand Total</span><span id="cartTotal">₹0</span></div>
+      </div>
+      <button class="btn btn-primary btn-block btn-lg" id="cartCheckoutBtn">Proceed to Checkout <i class="ph ph-arrow-right"></i></button>
+    </div>
+  </aside>
+
+  <!-- Online Order Options Modal -->
+  <div class="bistro-modal" id="onlineOrderModal">
+    <div class="bistro-modal-dialog">
+      <div class="bistro-modal-header">
+        <h3>Order From The Daily Online</h3>
+        <button class="bistro-modal-close-btn" id="closeOnlineOrderModalBtn"><i class="ph ph-x"></i></button>
+      </div>
+      <div class="bistro-modal-body">
+        <div style="display: flex; flex-direction: column; gap: 1rem;">
+          <div style="background: var(--bg-card); border: 2px solid var(--accent-primary); border-radius: var(--radius-md); padding: 1.25rem; display: flex; justify-content: space-between; align-items: center;">
+            <div>
+              <strong style="color: var(--text-primary); display: block; font-size: 1.1rem;">Direct Website Order</strong>
+              <p style="font-size: 0.85rem; color: var(--text-secondary); margin: 0;">Use code <strong>DAILY10</strong> for 10% off</p>
+            </div>
+            <a href="menu.html" class="btn btn-primary btn-sm">Open Menu</a>
+          </div>
+          <div style="background: var(--bg-card); border: 1px solid var(--border-subtle); border-radius: var(--radius-md); padding: 1.25rem; display: flex; justify-content: space-between; align-items: center;">
+            <div>
+              <strong style="color: var(--text-primary); display: block; font-size: 1.1rem;">Order on Zomato</strong>
+              <p style="font-size: 0.85rem; color: var(--text-secondary); margin: 0;">4.0 ★ rating on Zomato</p>
+            </div>
+            <a href="https://www.zomato.com/kolkata/the-daily-desapriya-park" target="_blank" rel="noopener" class="btn btn-zomato btn-sm">Zomato</a>
+          </div>
+          <div style="background: var(--bg-card); border: 1px solid var(--border-subtle); border-radius: var(--radius-md); padding: 1.25rem; display: flex; justify-content: space-between; align-items: center;">
+            <div>
+              <strong style="color: var(--text-primary); display: block; font-size: 1.1rem;">Order on Swiggy</strong>
+              <p style="font-size: 0.85rem; color: var(--text-secondary); margin: 0;">Fast doorstep delivery</p>
+            </div>
+            <a href="https://www.swiggy.com/city/kolkata/the-daily-cafe-desapriya-park-rest241166" target="_blank" rel="noopener" class="btn btn-swiggy btn-sm">Swiggy</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Checkout Modal -->
+  <div class="bistro-modal" id="checkoutModal">
+    <div class="bistro-modal-dialog">
+      <div class="bistro-modal-header">
+        <h3>Complete Your Order</h3>
+        <button class="bistro-modal-close-btn" id="closeCheckoutModalBtn"><i class="ph ph-x"></i></button>
+      </div>
+      <div class="bistro-modal-body">
+        <form id="checkoutForm">
+          <div class="form-group" style="margin-bottom: 1rem;"><label class="form-label">Full Name *</label><input type="text" id="checkoutName" class="form-control" required placeholder="e.g. Rahul Sen"></div>
+          <div class="form-group" style="margin-bottom: 1rem;"><label class="form-label">Phone Number *</label><input type="tel" id="checkoutPhone" class="form-control" required placeholder="e.g. +91 98300 XXXXX"></div>
+          <div class="form-group" style="margin-bottom: 1rem;"><label class="form-label">Delivery Address / Table No *</label><textarea id="checkoutAddress" class="form-control" rows="2" required placeholder="e.g. 5A Southern Avenue, Kolkata"></textarea></div>
+          <div class="form-group" style="margin-bottom: 1rem;">
+            <label class="form-label">Payment Method</label>
+            <div class="radio-pill-group">
+              <label class="pill-radio"><input type="radio" name="checkoutPayment" value="UPI to +91 80170 99950" checked> <span>UPI (GPay/PhonePe)</span></label>
+              <label class="pill-radio"><input type="radio" name="checkoutPayment" value="Cash on Delivery"> <span>Cash</span></label>
+            </div>
+          </div>
+          <div style="background: var(--bg-card); padding: 1rem; border-radius: var(--radius-sm); margin-bottom: 1rem;">
+            <div id="checkoutSummaryList" style="font-size: 0.85rem; max-height: 100px; overflow-y: auto;"></div>
+            <div style="display: flex; justify-content: space-between; font-weight: 700; margin-top: 0.5rem; border-top: 1px solid var(--border-subtle); padding-top: 0.5rem;">
+              <span>Total</span><span id="checkoutFinalTotal" style="color: var(--accent-primary);">₹0</span>
+            </div>
+          </div>
+          <div style="display: flex; gap: 0.75rem; flex-direction: column;">
+            <button type="button" class="btn btn-whatsapp btn-lg" id="checkoutWhatsAppBtn"><i class="ph ph-whatsapp-logo"></i> Send via WhatsApp</button>
+            <button type="submit" class="btn btn-primary btn-lg"><i class="ph ph-check-circle"></i> Place Order</button>
+            <button type="button" class="btn btn-secondary" id="cancelCheckoutBtn">Cancel</button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+
+  <!-- Order Success Modal -->
+  <div class="bistro-modal" id="orderSuccessModal">
+    <div class="bistro-modal-dialog">
+      <div class="bistro-modal-header">
+        <h3>Order Placed Successfully!</h3>
+        <button class="bistro-modal-close-btn" id="closeOrderSuccessBtn"><i class="ph ph-x"></i></button>
+      </div>
+      <div class="bistro-modal-body">
+        <div id="orderSuccessTicket"></div>
+        <div style="margin-top: 1.25rem;"><button class="btn btn-secondary btn-block" id="printReceiptBtn"><i class="ph ph-printer"></i> Print Receipt</button></div>
+      </div>
+    </div>
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>
